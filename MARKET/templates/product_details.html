@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block blocktitle %}Products{% endblock %}
+
+
+{% block body%}
+<header>
+    <nav>
+        <div class="div1">
+            <ul>
+
+                <li><B>Tech Market</B></li>
+                <li><a href="{{url_for('home')}}" style="text-decoration:none;color:#b4aba0"  class="item">Home</a></li>
+                <li><a href="{{url_for('products')}}" style="text-decoration:none;color:#b4aba0"  class="item">Our Products</a></li>
+                <li><a href="{{url_for('search_by_category', product_category='Laptops')}}" style="text-decoration:none;color:#b4aba0"  class="item">Category</a></li>
+                <li><a href="{{url_for('Contacte')}}" style="text-decoration:none;color:#b4aba0"  class="item">Contact</a></li>
+            </ul>
+        </div>
+        <div class="div2">
+            <label for="Search"></label>
+            <input type="text" id="Search" placeholder="Search by ID">
+            <button class="button" onclick="Search_byID()">Search</button>
+            </label>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="div3">
+        <h1 style="font-weight: 500; margin-bottom:5px;">Tech Market Products</h1>
+        <p style="font-weight: 100 ; color:#758c9a">Browse our extensive range of tech products</p>
+    </div>
+    {% for articles in data %}
+    <div class="article">
+        <div class="bar_horizontal">
+            <h1 style="background-color:#f7f7f7; font-weight:bold; font-size:medium; padding-left: 5px; height:34px; padding-top: 6px; font-family: Arial, Helvetica, sans-serif">NoteBook Basic Pro 15</h1>
+            <div class=contenu>
+                <p style="font-weight:bold; font-family: Arial, Helvetica, sans-serif; margin-bottom: 5px">{{articles['ProductId']}}</p>
+                <p style="font-family: Arial, Helvetica, sans-serif; font-size:medium; color:#676867; margin-bottom: 5px;">{{articles['Description']}}</p>
+                <p style="color:#676867;">{{articles['Price']}}</p><br>
+                <button class="details" onclick="More_details('{{ articles[ProductId]}}')">More Details</button>
+            </div>
+        </div>   
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

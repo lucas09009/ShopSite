@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block blocktitle %}
+Category
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <div class="div1">
+            <ul>
+                <li><B>Tech Market</B></li>
+                <li><a href="{{url_for('home')}}" style="text-decoration:none;color:#b4aba0"  class="item">Home</a></li>
+                <li><a href="{{url_for('products')}}" style="text-decoration:none;color:#b4aba0" class="item">Our Products</a></li>
+                <li><a href="{{url_for('Contacte')}}" style="text-decoration:none;color:#b4aba0" class="item">Contact</a></li>   
+            </ul>
+        </div>
+        <div class="div2">
+            <label for="Search"></label>
+            <input type="text" id="Search" placeholder="Search by category">
+            <button class="button" onclick="Search_by_category()">Search</button>
+            </label>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="div3">
+        <h1 style="font-weight: 500; margin-bottom:10px;">{{ product_id }}</h1>
+        <p style="font-weight: 100 ; color:#000000; height:1cm; background-color:#d4edda; padding-top: 10px;width:32cm">
+            Voici la liste des attributs disponibles pour le produit {{ product_id}}</p>
+    </div>
+    <div class=contenue
+    style=" font-family: Arial, Helvetica, sans-serif;border: 2px solid black; background-color: #b4aba0;padding-top: 15px; ">
+        <div class="bloc">
+            <ul style="margin-left: 20px; margin-bottom: 80px; list-style: none">
+                <!-- <li>ProductId</li> -->
+                <li>Category</li>
+                <li>MainCategory</li>
+                <li>TaxTarifCode</li>
+                <li>SupplierName</li>
+                <li>WeightMeasure</li>
+                <li>WeightUnit</li>
+                <li>Description</li>
+                <li>Name</li>
+                <li>ProductPicUrlv
+                <li>Status</li>
+                <li>Quantity</li>
+                <li>UoM</li>
+                <li>CurrencyCode</li>
+                <li>Price</li>
+                <li>Width</li>
+                <li>Depth</li>
+                <li>Height</li>
+                <li>DimUnit</li>
+            </ul>
+        </div>
+        <div class="bloc">
+            <ul style="list-style: none; margin-right: 90px; margin-bottom: 80px;">
+                <!-- <li>{{produit['productId']}}</li> -->
+                <li>{{produit['Category']}}</li>
+                <li>{{produit['MainCategory']}}</li>
+                <li>{{produit['TaxTarifCode']}}</li>
+                <li>{{produit['SupplierName']}}</li>
+                <li>{{produit['WeightMeasure']}}</li>
+                <li>{{produit['WeightUnit']}}</li>
+                <li>{{produit['Description']}}</li>
+                <li>{{produit['Name']}}</li>
+                <li>{{produit['productId']}}</li>
+                <li>{{produit['productPicUrl']}}</li>
+                <li>{{produit['Quantity']}}</li>
+                <li>{{produit['UoM']}}</li>
+                <li>{{produit['CurrencyCode']}}</li>
+                <li>{{produit['Price']}}</li>
+                <li>{{produit['Width']}}</li>
+                <li>{{produit['Depth']}}</li>
+                <li>{{produit['Height']}}</li>
+                <li>{{produit['DimUnit']}} </li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

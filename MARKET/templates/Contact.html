@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block blocktitle %}Products{% endblock %}
+
+
+{% block body%}
+<header>
+    <nav>
+        <div class="div1">
+            <ul>
+                <li><B>Tech Market</B></li>
+                <li><a href="{{url_for('home')}}" style="text-decoration:none;color:#b4aba0"  class="item">Home</a></li>
+                <li><a href="{{url_for('products')}}" style="text-decoration:none;color:#b4aba0"  class="item">Our Products</a></li>
+                <li><a href="{{url_for('search_by_category', product_category='Laptops')}}" style="text-decoration:none;color:#b4aba0"  class="item">Category</a></li>
+                <li><a href="{{url_for('Contacte')}}" style="text-decoration:none;color:#b4aba0"  class="item">Contact</a></li>
+            </ul>
+        </div>
+        <div class="div2">
+            <label for="Search"></label>
+            <input type="text" id="Search" placeholder="Search by name">
+            <button class="button" onclick="Search_byNAME()">Search</button>
+            </label>
+        </div>
+    </nav>
+</header>
+    <body>
+    <button class="darkMode">Dark Mode</button>
+    <form method="POST" action="/Contact">
+        <div class="container">
+        {{ form.hidden_tag() }}
+        <h1 class="h1">Contactez-Nous</h1><hr>
+
+        {{ form.Nom.label(class='ctn') }}
+        {{ form.Nom(class='champ_de_saisie', size=10) }}<br>
+
+        {{ form.Prenom.label(class='con') }}
+        {{ form.Prenom(class='champ_de_saisie' ,size=10 ) }}<br>
+
+        {{ form.Email.label(class='noi') }}
+        {{ form.Email(class='champ_de_saisie', size=10) }}<br>
+
+        {{ form.Message.label(class='ca') }}
+        {{ form.Message(class='champ_de_saisie', size=100, cols=90   ) }}<br>
+
+        {{ form.submit(class='submit') }}
+       
+    </div>
+    </form>
+
+    <script>
+        const darkModeBtn = document.querySelector('.darkMode')
+        let ToggleTheme = 0;
+    
+    
+        darkModeBtn.addEventListener('click', () => {
+    
+            if(ToggleTheme === 0){
+            document.documentElement.style.setProperty('--ecriture', '#1379f5');
+            document.documentElement.style.setProperty('--background', '#80a6d4');
+            ToggleTheme++
+        }
+        else{
+            document.documentElement.style.setProperty('--background', '#262626');
+            document.documentElement.style.setProperty('--ecriture', '#d11111');
+            ToggleTheme--
+        }
+        })
+    </script>
+{% endblock %}

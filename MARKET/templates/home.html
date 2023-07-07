@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block blocktitle %}Home{% endblock %}
+
+  
+  
+{% block body%}
+<header>
+    <nav>
+        <div class="div1">
+            <ul>
+                <li><B>Tech Market</B></li>
+                <li><a href="{{url_for('home')}}" style="text-decoration:none;color:#b4aba0" class="item">Home</a></li>
+                <li><a href="{{url_for('products')}}" style="text-decoration:none;color:#b4aba0" class="item">Our Products</a></li>
+                <li><a href="{{url_for('search_by_category', product_category='Laptops')}}" style="text-decoration:none;color:#b4aba0" class="item">Category</a></li>
+                <li><a href="{{url_for('Contacte')}}" style="text-decoration:none;color:#b4aba0" class="item">Contact</a></li>
+            </ul>
+        </div>
+        <div class="div2">
+            <label for = "Search"></label>
+            <input type = "text" id="Search" placeholder="Search by name">
+            <button class = "button" onclick="Search_byNAME()">Search</button>
+            </label>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="div3">
+        <h1 style="font-weight: 500; margin-bottom:10px;">Welcome to Tech Market</h1>
+        <p style="font-weight: 100 ; color:#758c9a">The fatest growing online retailer in the west...</p>
+    </div>
+    <div class="">
+        <h3
+            style="margin:30px 0px 10px 15px; font-family: Arial, Helvetica, sans-serif; font-weight:600; font-size:25px">
+            About</h3>
+        <p style="margin:20px 0px 10px 15px; font-family: Arial, Helvetica, sans-serif">We supply a wide range of tech products and accessories for our clients
+            all over the world.</p>
+        <div style="display: flex; margin-left:300px; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif">
+            <ul style="padding: 5px">
+                <li>Laptops</li>
+                <li>Computers</li>
+                <li>Phones</li>
+            </ul>
+            <ul style="margin-left:250px;padding: 5px">
+                <li>Audio Equipment</li>
+                <li>HD Monitors</li>
+                <li>Wireless Routers</li>
+            </ul>
+        </div>
+        <button class="buttonHome"; onclick="window.location.href = '/products'">Check Out Our Products </button>
+    </div>
+</main>
+{% endblock %}
